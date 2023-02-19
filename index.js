@@ -43,7 +43,7 @@ my_target = 'https://'+nodeList[Math.floor(Math.random() * nodeList.length)];
 app.use('*', createProxyMiddleware({target:my_target, changeOrigin: true}));
 app.listen(process.env.PORT || 3000);
 */
-const http = require('http'),
+const http = require('http');
 
 const httpProxy = require('http-proxy');
 my_target =  nodeList[Math.floor(Math.random() * nodeList.length)]; 
