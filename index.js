@@ -14,14 +14,17 @@ var nodeList = [
 ];
 
 http.createServer(function (req, res) {
-    console.log(`Just got a request at ${req.url}!`)
-	 let url = new URL(req.url);
-    try {
-        url.hostname = nodeList[Math.floor(Math.random() * nodeList.length)];                        
+    console.log(`Just got a request at ${req.url}!`);
+	let url = new URL(req.url);
+	        url.hostname = nodeList[Math.floor(Math.random() * nodeList.length)];                        
         url.protocol = "https";
-	    console.log(url)
+	 console.log( url.hostname );
+	 
+    try {
+  console.log('start fetch')
       return fetch(new Request(url, req));
     } catch (e) {
+	      console.log('error fetch')
       return new Response(e);
     }
     
