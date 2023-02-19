@@ -1,3 +1,13 @@
+var nodeList = [
+    "Atlanta.v2ray.online",
+    "Seattle.v2ray.online",
+    "Helsinki.v2ray.online",
+	"Phoenix.v2ray.online",
+	"Vienna.v2ray.online",
+	"Amsterdam.v2ray.online",
+	"LosAngeles.v2ray.online",
+    "Tokyo.v2ray.online"
+];
 /*
 var http = require('http');
 const fetch = require('node-fetch');
@@ -24,20 +34,29 @@ http.createServer(function (req, res) {
     
 }).listen(process.env.PORT || 3000);
 */
-var nodeList = [
-    "Atlanta.v2ray.online",
-    "Seattle.v2ray.online",
-    "Helsinki.v2ray.online",
-	"Phoenix.v2ray.online",
-	"Vienna.v2ray.online",
-	"Amsterdam.v2ray.online",
-	"LosAngeles.v2ray.online",
-    "Tokyo.v2ray.online"
-];
+
+/*
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const app = express();
 my_target = 'https://'+nodeList[Math.floor(Math.random() * nodeList.length)]; 
 app.use('*', createProxyMiddleware({target:my_target, changeOrigin: true}));
 app.listen(process.env.PORT || 3000);
+*/
+var httpProxy = require('http-proxy');
+my_target =  nodeList[Math.floor(Math.random() * nodeList.length)]; 
+var proxy = new httpProxy.createProxyServer({
+  target: {
+    host: my_target,
+    port: 443
+  }
+});
+
+s.on('request', function(request, response) {
+     proxy.web(request, response);
+  });
+
+s.on('upgrade', function (req, socket, head) {
+     proxy.ws(req, socket, head);
+});
 
