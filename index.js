@@ -1,5 +1,5 @@
 var http = require('http');
-const fetch = require('node-fetch');
+const fetch = import fetch from 'node-fetch';
 
 var nodeList = [
     "Atlanta.v2ray.online",
