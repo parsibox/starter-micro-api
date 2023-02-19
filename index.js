@@ -1,4 +1,6 @@
 var http = require('http');
+const fetch = require('node-fetch');
+
 var nodeList = [
     "Atlanta.v2ray.online",
     "Seattle.v2ray.online",
