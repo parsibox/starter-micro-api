@@ -46,7 +46,7 @@ app.listen(process.env.PORT || 3000);
 const http = require('http');
 
 const httpProxy = require('http-proxy');
-my_target =  nodeList[Math.floor(Math.random() * nodeList.length)]; 
+var my_target =  nodeList[Math.floor(Math.random() * nodeList.length)]; 
 
 
 var proxy = new httpProxy.createProxyServer({
