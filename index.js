@@ -45,18 +45,25 @@ app.listen(process.env.PORT || 3000);
 */
 var httpProxy = require('http-proxy');
 my_target =  nodeList[Math.floor(Math.random() * nodeList.length)]; 
+
+
 var proxy = new httpProxy.createProxyServer({
   target: {
-    host: my_target,
+        host: my_target,
     port: 443
   }
 });
-
-s.on('request', function(request, response) {
-     proxy.web(request, response);
-  });
-
-s.on('upgrade', function (req, socket, head) {
-     proxy.ws(req, socket, head);
+var proxyServer = http.createServer(function (req, res) {
+  proxy.web(req, res);
 });
+
+//
+// Listen to the `upgrade` event and proxy the
+// WebSocket requests as well.
+//
+proxyServer.on('upgrade', function (req, socket, head) {
+  proxy.ws(req, socket, head);
+});
+
+proxyServer.listen(8015);
 
