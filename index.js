@@ -9,7 +9,7 @@ var nodeList = [
     "Tokyo.v2ray.online"
 ];
 /*
-var http = require('http');
+const http = require('http');
 const fetch = require('node-fetch');
 
 
