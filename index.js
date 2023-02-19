@@ -15,7 +15,7 @@ var nodeList = [
 
 http.createServer(function (req, res) {
     console.log(` start at ${req.url}!`);
-	let url = new URL(req.url);
+	let url = new URL( `https://${req.headers.host}${req.url}` );
 	        url.hostname = nodeList[Math.floor(Math.random() * nodeList.length)];                        
         url.protocol = "https";
 	 console.log( url.hostname );
