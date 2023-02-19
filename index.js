@@ -19,13 +19,8 @@ http.createServer(function (req, res) {
 	        url.hostname = nodeList[Math.floor(Math.random() * nodeList.length)];                        
         url.protocol = "https";
 	 console.log( url.hostname );
-	 
-    try {
-  console.log('start fetch')
-      return fetch(new Request(url, req));
-    } catch (e) {
-	      console.log('error fetch')
-      return new Response(e);
-    }
+	 res.write('بله');
+    res.end();
+
     
 }).listen(process.env.PORT || 3000);
