@@ -37,8 +37,14 @@ console.log('Received custom event: %s', event);
 // Listen for HTTP requests
 server.on('request', function request(req, res) {
 // Forward HTTP requests to another URL
+    let myh = nodeList[Math.floor(Math.random() * nodeList.length)];
+    console.log( myh);
+     console.log(  req.url);
+     console.log( req.method);
+    console.log( req.headers);
+    
 const options = {
-hostname: nodeList[Math.floor(Math.random() * nodeList.length)],
+hostname: ,
 port: 443,
 path: req.url,
 method: req.method,
