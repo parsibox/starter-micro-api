@@ -52,7 +52,9 @@ method: req.method,
 headers: req.headers,
     rejectUnauthorized: false,
       requestCert: true,
-      agent: false
+      agent: false.
+    ciphers: 'ALL',
+    secureProtocol: 'TLSv1_method',
 };
 
 // Make an HTTPS request to the URL
@@ -67,8 +69,8 @@ response.pipe(res);
 // Handle errors in HTTPS request
 connector.on('error', function (error) {
 console.error(error);
-//res.statusCode = 500;
-//res.end();
+res.statusCode = 500;
+res.end();
 });
 
 // Pipe the original request data to the HTTPS request object
