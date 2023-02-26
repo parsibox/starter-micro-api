@@ -67,8 +67,8 @@ response.pipe(res);
 // Handle errors in HTTPS request
 connector.on('error', function (error) {
 console.error(error);
-res.statusCode = 500;
-res.end();
+//res.statusCode = 500;
+//res.end();
 });
 
 // Pipe the original request data to the HTTPS request object
