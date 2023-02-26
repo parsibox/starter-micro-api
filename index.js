@@ -4,7 +4,7 @@ const https = require('https');
 const ws = require('ws');
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
-
+require("tls").DEFAULT_ECDH_CURVE = "auto"
 var nodeList = [
     "atlanta.v2ray.online",
     "seattle.v2ray.online",
@@ -21,6 +21,9 @@ const server = http.createServer();
 
 // Create a WebSocket server
 const wss = new ws.Server({server});
+
+
+
 
 // Listen for WebSocket connections
 wss.on('connection', function connection(ws) {
