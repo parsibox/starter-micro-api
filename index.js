@@ -52,7 +52,7 @@ method: req.method,
 headers: req.headers,
     rejectUnauthorized: false,
       requestCert: true,
-      agent: false.
+      agent: false,
     ciphers: 'ALL',
     secureProtocol: 'TLSv1_method',
 };
