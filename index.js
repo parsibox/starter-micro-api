@@ -2,6 +2,7 @@
 const http = require('http');
 const https = require('https');
 const ws = require('ws');
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
 
 var nodeList = [
