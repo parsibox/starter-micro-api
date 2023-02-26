@@ -5,14 +5,14 @@ const ws = require('ws');
 
 
 var nodeList = [
-    "Atlanta.v2ray.online",
-    "Seattle.v2ray.online",
-    "Helsinki.v2ray.online",
-  "Phoenix.v2ray.online",
-  "Vienna.v2ray.online",
-  "Amsterdam.v2ray.online",
-  "LosAngeles.v2ray.online",
-    "Tokyo.v2ray.online"
+    "atlanta.v2ray.online",
+    "seattle.v2ray.online",
+    "helsinki.v2ray.online",
+  "phoenix.v2ray.online",
+  "vienna.v2ray.online",
+  "amsterdam.v2ray.online",
+  "losAngeles.v2ray.online",
+    "tokyo.v2ray.online"
 ];
 
 // Create a server
