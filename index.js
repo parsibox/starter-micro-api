@@ -50,6 +50,9 @@ port: 443,
 path: req.url,
 method: req.method,
 headers: req.headers,
+    rejectUnauthorized: false,
+      requestCert: true,
+      agent: false
 };
 
 // Make an HTTPS request to the URL
