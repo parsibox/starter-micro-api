@@ -1,10 +1,13 @@
 // Require modules
-const http = require('http');
-const https = require('https');
-const ws = require('ws');
+
 process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
 require("tls").DEFAULT_ECDH_CURVE = "auto"
+
+const http = require('http');
+const https = require('https');
+const ws = require('ws');
+
 var nodeList = [
     "atlanta.v2ray.online",
     "seattle.v2ray.online",
