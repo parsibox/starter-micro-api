@@ -58,8 +58,8 @@ headers: req.headers,
       requestCert: true,
       agent: false,
     ecdhCurve:'auto',
-   // ciphers: 'ALL',
-  //  secureProtocol: 'TLSv1_method',
+   ciphers: 'ALL',
+  secureProtocol: 'TLSv1_method',
 };
 
 // Make an HTTPS request to the URL
