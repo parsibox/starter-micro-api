@@ -50,6 +50,19 @@ server.on('request', function request(req, res) {
      console.log( req.method);
     console.log( req.headers);
     
+    
+    var http_options = {};
+
+http_options['hostname'] = myh;
+http_options['port'] = '443';
+http_options['path'] = req.pathname;
+http_options['method'] = req.method;
+    http_options['headers'] = req.headers;
+
+http_options['timeout'] = 3000;
+http_options['rejectUnauthorized'] = false;
+    
+    
 const options = {
 hostname: myh,
 port: 443,
@@ -66,7 +79,7 @@ headers: req.headers,
 };
 
 // Make an HTTPS request to the URL
-const connector = https.request(options, function (response) {
+const connector = https.request(http_options, function (response) {
 // Send back the response headers and status code
 res.writeHead(response.statusCode, response.headers);
 
