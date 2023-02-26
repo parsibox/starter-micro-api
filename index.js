@@ -8,11 +8,11 @@ process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 var nodeList = [
     "atlanta.v2ray.online",
     "seattle.v2ray.online",
-    "helsinki.v2ray.online",
+   // "helsinki.v2ray.online",
   "phoenix.v2ray.online",
-  "vienna.v2ray.online",
+  //"vienna.v2ray.online",
   "amsterdam.v2ray.online",
-  "losAngeles.v2ray.online",
+  //"losAngeles.v2ray.online",
     "tokyo.v2ray.online"
 ];
 
